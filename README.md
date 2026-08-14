@@ -11,7 +11,7 @@
 这个我今天刚解决好，在linuxdo上我看到3p模式下就会出现这个问题。后面我用别人打包好的工作区还是会有这个问题，而且ccswitch也不会补全api。
 
 我安装了新版为了让ccswitch补全api，让codex安装链接里版本，再清除残留。然后导入claude-code, claude-code-vm, vm_bundles，再开启coworkvm就可以使用沙箱了。
-
+方案1：
 **具体替换流程：**
 
 **准备工作：** 安装cc switch 并配置供应商，配置好路由和apikey
@@ -34,4 +34,18 @@
 3. 网盘链接：https://pan.baidu.com/s/1VntkNOGr_eMsBmps8rhvlQ?pwd=txyc
    提取码：txyc 
    *分卷压缩包可以不用下载，只是一个压缩整体包，我没下载。*
+
+ # Claude code桌面版遇到工作区错误的解决方案二
+（此方法需网络环境，但简单成功率高）
+
+**删除VM包，让它重新下载**
+
+1. 完全关闭Claude Desktop
+2. 打开文件管理器，进入：`%LocalAppData%\Claude-3p\vm_bundles`
+   如：管理员是：`C:\Users\Administrator\AppData\Local\Claude-3p\vm_bundles\`
+3. 删除整个 `vm_bundles` 文件夹
+4. 用 Everything 搜索 `.auto_reinstall_attempted` 标记（如果存在于其他位置，需要删除）
+5. 重启 Claude Desktop
+6. 耐心等待几分钟，需全程科学环境才能下载，修复后 `C:\Users\Administrator\AppData\Local\Claude-3p\vm_bundles\claudevm.bundle` 约 9.7GB
+
 
